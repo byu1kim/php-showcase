@@ -4,6 +4,7 @@
         <ul class="flex">
             <li class="p-3"><a href="/projects">PROJECTS</a></li>
             <li class="p-3"><a href="/about">ABOUT</a></li>
+            aa
             @if (auth()->user()
                     ?->isAdmin())
                 <li class="p-3"><a href="/admin">ADMIN</a></li>

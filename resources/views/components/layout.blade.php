@@ -18,20 +18,28 @@
 <body class="h-screen">
     <x-nav />
     @if (session()->has('success'))
-        <div class="md:flex md:justify-center md:items-center">
-            <p class="text-xs font-bold uppercase border border-green-700 rounded px-4 py-2">
-                {{ session()->get('success') }}
-            </p>
-        </div>
+    <div class="md:flex md:justify-center md:items-center bg-stone-900">
+        <p class="text-xs font-bold uppercase border border-green-700 rounded px-4 py-2 bg-white">
+            {{ session()->get('success') }}
+        </p>
+    </div>
     @elseif (session()->has('error'))
-        <div class="md:flex md:justify-center md:items-center">
-            <p class="text-xs font-bold uppercase border border-red-700 rounded px-4 py-2">
-                {{ session()->get('error') }}
-            </p>
-        </div>
+    <div class="md:flex md:justify-center md:items-center bg-stone-900">
+        <p class="text-xs font-bold uppercase border border-red-700 rounded px-4 py-2 bg-white">
+            {{ session()->get('error') }}
+        </p>
+    </div>
     @endif
     {{ $content }}
     <x-footer />
+    <script>
+        const button = document.querySelector("#menu-button");
+        const menu = document.querySelector("#menu");
+        
+        button.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
 </body>
 
 </html>

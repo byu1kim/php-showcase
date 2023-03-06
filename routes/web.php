@@ -22,9 +22,7 @@ use App\Http\Controllers\UserController;
 
 
 // Pages
-Route::get('/', function() {
-    return view('index');
-});
+Route::get('/', [ProjectController::class, 'index']);
 
 Route::get('/about', function() { 
     return view('about');
@@ -32,7 +30,8 @@ Route::get('/about', function() {
 
 Route::get('/projects', [ProjectController::class, 'projects']);
 Route::get('/projects/{prac}', [ProjectController::class, 'details']);
-Route::get('/categories/{category:slug}', [ProjectController::class, 'listByCategory']);
+Route::get('/projects/categories/{category:slug}', [ProjectController::class, 'listByCategory']);
+Route::get('/projects/tags/{tag:slug}', [ProjectController::class, 'listByTag']);
 
 // Register
 Route::get('/register', [RegisterUserController::class, 'create'])->middleware('guest'); 

@@ -34,6 +34,7 @@ class ProjectSeeder extends Seeder
             'slug' => 'moive-mania',
             'excerpt' => fake()->sentences(2, true),
             'body' => $this->fakeHTMLParagraphs(5),
+            'category_id' => 1,
             'color' => 'rose-600'
         ]);
         Project::create([
@@ -64,6 +65,7 @@ class ProjectSeeder extends Seeder
             'slug' => 'android-app',
             'excerpt' => fake()->sentences(2, true),
             'body' => $this->fakeHTMLParagraphs(),
+            'category_id' => 3,
             'color' => 'cyan-600',
         ]);
         Project::create([
